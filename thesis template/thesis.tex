@@ -14,10 +14,10 @@
 
 % \advisor{Dr. Advisor}
 
-\listadd{\advisors}{Dr. Advisor 1}
-\listadd{\advisors}{Dr. Advisor 2}
-\listadd{\committee}{Dr. Reader 1}
-\listadd{\committee}{Dr. Reader 2}
+\listadd{\advisors}{Advisor 1}
+\listadd{\advisors}{Advisor 2}
+\listadd{\committee}{Reader 1}
+\listadd{\committee}{Reader 2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,6 +91,7 @@
 \newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% MAIN DOCUMENT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,6 +99,15 @@
 
 \frontmatter
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% TITLE AND SIGNATURE PAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\maketitle
+
+% the title page is the first numbered page (not the abstract),
+% but the first page number appears on the table of contents
+\setcounter{page}{3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ABSTRACT (200 word max, one paragraph)
@@ -110,16 +120,6 @@
   \texttt{pdflatex thesis.tex}\\
   \texttt{pdflatex thesis.tex}
 \end{abstract}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% TITLE AND SIGNATURE PAGE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\maketitle
-
-% the title page is the first numbered page (not the abstract),
-% but the first page number appears on the table of contents
-\setcounter{page}{3}
 
 % table of contents
 \tableofcontents

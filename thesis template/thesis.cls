@@ -91,7 +91,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% TOC / LOT / LOF
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\renewcommand*\contentsname{\centering Table of Contents}
+\addto\captionsenglish{%
+ \renewcommand\contentsname{Table of Contents}
+}
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries\sffamily}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 \renewcommand*{\cftlottitlefont}{\hspace*{\fill}\Large\bfseries\sffamily}
@@ -150,14 +152,13 @@
 %% ABSTRACT (max 200 words)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newenvironment{abstract}
-  {\thispagestyle{empty}%
-  \singlespacing%
-  \begin{center}
-    {ABSTRACT}\\[12pt]
-    \MakeUppercase{\@title}\\[12pt]
-    by \@firstname~\@lastname\\[24pt]
-  \end{center}
-  \parindent0pt}
+  {
+    \singlespacing%
+    \begin{center}
+      {ABSTRACT}\\[2\baselineskip]
+    \end{center}
+    \parindent0pt
+  }
   {\newpage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,37 +172,29 @@
       \MakeUppercase{\@title}
     \end{singlespacing}
     \vfill
-    {\openup 1em
-      A Thesis\\[1cm]
-      Submitted to the\\
-      Faculty of \@school\\
-      in partial fulfillment of\\
-      the requirements for the degree of\\
-      Master of Science\\
-      by\\
-      \@firstname~\@lastname\\
-      \@school\\
-      \@city,~\@state\\
-      \@year\\
-      \vfill
-      \renewcommand{\do}[1]{Advisor: ##1\\}{\dolistloop\advisors}
-      \renewcommand{\do}[1]{Reader: ##1\\}{\dolistloop\committee}
-    }
-    \vfill
-    \textcopyright~\@year~\@firstname~\@lastname
-    \vfill
+    \@firstname~\@lastname\\ \vfill
+    A THESIS\\ \vfill
+    Presented to the Faculty of Miami University in partial\\
+    fulfillment of the requirements\\
+    for the degree of\\ \vfill
+    Master of Science\\ \vfill
+    Department of~\@department\\ \vfill
+    The Graduate School\\
+    \@school\\
+    \@city, \@state\\ \vfill
+    \@year\\ \vfill\vfill
+    \begin{flushleft}
+      \renewcommand{\do}[1]{##1, Advisor\\}{\dolistloop\advisors}
+      \renewcommand{\do}[1]{##1, Reader\\}{\dolistloop\committee}
+    \end{flushleft}
+    % copyright page
     \newpage
+    \vspace*{6cm}
     \thispagestyle{empty}
-    This thesis titled\\[1cm]
-    \MakeUppercase{\@title}\\[1cm]
-    by\\[1cm]
+    \copyright\\[1cm]
     \@firstname~\@lastname\\[1cm]
-    has been approved for publication by\\[0.75cm]
-    The College of~\@college\\[0.5cm]
-    and\\[0.5cm]
-    The Department of~\@department\\[1.5cm]
-    \renewcommand{\do}[1]{\rule[-0.1cm]{8cm}{0.01cm}\\##1\\[1cm]}{\dolistloop\advisors}
-    \renewcommand{\do}[1]{\rule[-0.1cm]{8cm}{0.01cm}\\##1\\[1cm]}{\dolistloop\committee}
+    \@year
+    \newpage
   \end{titlepage}
   \myspacing}
 
