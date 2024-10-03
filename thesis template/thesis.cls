@@ -173,7 +173,7 @@
     \end{singlespacing}
     \vfill
     \@firstname~\@lastname\\ \vfill
-    A THESIS\\ \vfill
+    \textbf{A THESIS}\\ \vfill
     Presented to the Faculty of Miami University in partial\\
     fulfillment of the requirements\\
     for the degree of\\ \vfill
