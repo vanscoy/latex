@@ -21,6 +21,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% PACKAGES (not required)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{lipsum}                   % filler text
 \usepackage{graphicx}                 % figures
 \usepackage{amsmath,amssymb,amsthm}   % mathematics
@@ -35,6 +36,30 @@
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{acronym}
+\usepackage{minted}                  % code listings
+\usepackage{textalpha}               % greek letters in text (not math mode)
+\usepackage{pdfcomment}              % tooltips
+
+
+% \DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
+\DeclareUnicodeCharacter{207F}{\textsuperscript{n}}
+\DeclareUnicodeCharacter{2208}{\ensuremath{\in}}
+
+\newenvironment{code}[4][]
+ {\VerbatimEnvironment
+  \begin{listing}
+  \caption{#3}\label{#4}
+  \begin{tcolorbox}
+    \begin{minted}[
+    linenos,
+    fontsize=\footnotesize,
+    xleftmargin=21pt,
+    baselinestretch=1,
+    tabsize=4,
+    #1]{#2}}
+ {\end{minted}\end{tcolorbox}\end{listing}}
+
+
 \usepackage{thmtools}
 \theoremstyle{definition}
 \declaretheorem[name=Theorem, Refname={Theorem,Theorems}]{theorem}

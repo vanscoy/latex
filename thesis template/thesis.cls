@@ -27,6 +27,7 @@
 \RequirePackage{setspace}                % spacing
 \RequirePackage{fancyhdr}                % fancy header/footer
 \RequirePackage{etoolbox}                % edit latex macros
+\RequirePackage{tcolorbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% SECTIONS
@@ -139,14 +140,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% METADATA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\hypersetup{
+\AfterPreamble{\hypersetup{
   pdfauthor  = {\@firstname~\@lastname},
   pdftitle   = {\@title},
   pdfsubject = {},
-  colorlinks,
+  hidelinks,
   allcolors  = black,
   linktoc    = all,
-}
+}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ABSTRACT (max 200 words)
